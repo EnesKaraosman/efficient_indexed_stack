@@ -1,6 +1,6 @@
 import 'dart:collection';
 
-import 'package:lazy_indexed_stack/src/index_calculation_strategy.dart';
+import 'package:efficient_indexed_stack/src/index_calculation_strategy.dart';
 
 class KeepAliveIndicesCalculator {
   const KeepAliveIndicesCalculator({

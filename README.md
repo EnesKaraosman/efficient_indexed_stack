@@ -1,4 +1,4 @@
-# lazy_indexed_stack
+# efficient_indexed_stack
  
 Flutter's `IndexedStack` widget initializes the given `children` immediately.
 

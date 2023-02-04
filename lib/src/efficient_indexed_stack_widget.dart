@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/widgets.dart';
-import 'package:lazy_indexed_stack/src/index_calculation_strategy.dart';
+import 'package:efficient_indexed_stack/src/index_calculation_strategy.dart';
 
 import 'keep_alive_indices_calculator.dart';
 
 /// It's an IndexedStack that only builds the widgets that are in the range of the
 /// current index and the keepAliveDistance
-class LazyIndexedStack extends StatefulWidget {
-  const LazyIndexedStack({
+class EfficientIndexedStack extends StatefulWidget {
+  const EfficientIndexedStack({
     super.key,
     required this.itemCount,
     required this.index,
@@ -73,10 +73,10 @@ class LazyIndexedStack extends StatefulWidget {
   static final Set<int> _keepAliveChildrenIndexes = {};
 
   @override
-  LazyIndexedStackState createState() => LazyIndexedStackState();
+  EfficientIndexedStackState createState() => EfficientIndexedStackState();
 }
 
-class LazyIndexedStackState extends State<LazyIndexedStack> {
+class EfficientIndexedStackState extends State<EfficientIndexedStack> {
   final Map<int, Widget> _children = {};
   final _stackKey = GlobalKey();
 
@@ -95,7 +95,7 @@ class LazyIndexedStackState extends State<LazyIndexedStack> {
       calculationStrategy: widget.indexCalculationStrategy,
     ).getIndices();
     for (var index in indices) {
-      LazyIndexedStack._keepAliveChildrenIndexes.add(index);
+      EfficientIndexedStack._keepAliveChildrenIndexes.add(index);
       _children[index] = widget.itemBuilder(context, index);
     }
   }
@@ -133,7 +133,7 @@ class LazyIndexedStackState extends State<LazyIndexedStack> {
   }
 
   @override
-  void didUpdateWidget(LazyIndexedStack oldWidget) {
+  void didUpdateWidget(EfficientIndexedStack oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     if (oldWidget.index != widget.index) {
@@ -144,16 +144,16 @@ class LazyIndexedStackState extends State<LazyIndexedStack> {
         calculationStrategy: widget.indexCalculationStrategy,
       ).getIndices();
 
-      final toBeDisposedIndexes = LazyIndexedStack._keepAliveChildrenIndexes
+      final toBeDisposedIndexes = EfficientIndexedStack._keepAliveChildrenIndexes
           .difference(keepAliveIndexes);
 
       final toBeBuiltIndexes = keepAliveIndexes
-          .difference(LazyIndexedStack._keepAliveChildrenIndexes);
+          .difference(EfficientIndexedStack._keepAliveChildrenIndexes);
 
       _buildChildrenBasedOnDifference(toBeBuiltIndexes);
       _disposeChildrenBasedOnChange(toBeDisposedIndexes);
-      LazyIndexedStack._keepAliveChildrenIndexes.clear();
-      LazyIndexedStack._keepAliveChildrenIndexes.addAll(keepAliveIndexes);
+      EfficientIndexedStack._keepAliveChildrenIndexes.clear();
+      EfficientIndexedStack._keepAliveChildrenIndexes.addAll(keepAliveIndexes);
     }
   }
 

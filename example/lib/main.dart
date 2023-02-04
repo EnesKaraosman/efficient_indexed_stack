@@ -1,6 +1,6 @@
 import 'package:example/my_cool_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:lazy_indexed_stack/lazy_indexed_stack.dart';
+import 'package:efficient_indexed_stack/efficient_indexed_stack.dart';
 
 void main() {
   runApp(const MyApp());
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ],
         ),
-        body: LazyIndexedStack(
+        body: EfficientIndexedStack(
           index: activeIndex,
           itemCount: itemCount,
           keepAliveDistance: 3,

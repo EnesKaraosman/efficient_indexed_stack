@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lazy_indexed_stack/src/index_calculation_strategy.dart';
-import 'package:lazy_indexed_stack/src/keep_alive_indices_calculator.dart';
+import 'package:efficient_indexed_stack/src/index_calculation_strategy.dart';
+import 'package:efficient_indexed_stack/src/keep_alive_indices_calculator.dart';
 
 void main() {
   group('KeepAliveIndicesCalculator ', () {
