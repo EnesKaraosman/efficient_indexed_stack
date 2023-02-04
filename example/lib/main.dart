@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
         body: LazyIndexedStack(
-          currentIndex: activeIndex,
+          index: activeIndex,
           itemCount: itemCount,
           keepAliveDistance: 3,
           itemBuilder: (_, index) => DummyWidget(

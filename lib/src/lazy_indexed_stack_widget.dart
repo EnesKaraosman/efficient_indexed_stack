@@ -11,7 +11,7 @@ class LazyIndexedStack extends StatefulWidget {
   const LazyIndexedStack({
     super.key,
     required this.itemCount,
-    required this.currentIndex,
+    required this.index,
     required this.itemBuilder,
     this.keepAliveDistance = 5,
     this.indexCalculationStrategy = IndexCalculationStrategy.aroundCurrentIndex,
@@ -62,7 +62,7 @@ class LazyIndexedStack extends StatefulWidget {
   final int itemCount;
 
   /// The index of the child to show.
-  final int currentIndex;
+  final int index;
 
   /// It's a function that returns a widget.
   final Widget Function(BuildContext context, int index) itemBuilder;
@@ -80,7 +80,7 @@ class LazyIndexedStackState extends State<LazyIndexedStack> {
   final Map<int, Widget> _children = {};
   final _stackKey = GlobalKey();
 
-  int get _currentIndex => widget.currentIndex;
+  int get _currentIndex => widget.index;
 
   int get _maxIndex => widget.itemCount - 1;
 
@@ -136,7 +136,7 @@ class LazyIndexedStackState extends State<LazyIndexedStack> {
   void didUpdateWidget(LazyIndexedStack oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    if (oldWidget.currentIndex != widget.currentIndex) {
+    if (oldWidget.index != widget.index) {
       final keepAliveIndexes = KeepAliveIndicesCalculator(
         maxIndex: _maxIndex,
         currentIndex: _currentIndex,
@@ -161,7 +161,7 @@ class LazyIndexedStackState extends State<LazyIndexedStack> {
   Widget build(BuildContext context) {
     return IndexedStack(
       key: _stackKey,
-      index: widget.currentIndex,
+      index: widget.index,
       alignment: widget.alignment,
       textDirection: widget.textDirection,
       sizing: widget.sizing,
