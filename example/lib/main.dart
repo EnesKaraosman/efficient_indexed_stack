@@ -1,4 +1,4 @@
-import 'package:example/dummy_widget.dart';
+import 'package:example/my_cool_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:lazy_indexed_stack/lazy_indexed_stack.dart';
 
@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
           index: activeIndex,
           itemCount: itemCount,
           keepAliveDistance: 3,
-          itemBuilder: (_, index) => DummyWidget(
+          itemBuilder: (_, index) => MyCoolWidget(
             index,
             key: GlobalKey(),
           ),

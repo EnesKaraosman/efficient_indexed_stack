@@ -1,3 +1,4 @@
-## 0.0.1
+## 1.0.0
 
-* TODO: Describe initial release.
+* It's an IndexedStack that only builds the widgets that are in the range of the
+  current index and the keepAliveDistance
