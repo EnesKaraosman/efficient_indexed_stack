@@ -7,7 +7,7 @@ This package handle initialization process so that children gets built lazily.
 Minimal usage;
 
 ```dart
-LazyIndexedStack(
+EfficientIndexedStack(
   index: index,
   itemCount: itemCount,
   itemBuilder: (_, index) => MyCoolWidget(
@@ -22,7 +22,7 @@ LazyIndexedStack(
 You can set `keepAliveDistance` parameter to decide how many indices must be alive.
 
 ```dart
-LazyIndexedStack(
+EfficientIndexedStack(
   keepAliveDistance: 4,
   index: activeIndex,
   itemCount: itemCount,
@@ -42,7 +42,7 @@ You can set `indexCalculationStrategy` parameter to decide which indices should 
 aroundCurrentIndex option initializes the current index and the indices before and after that based on `keepAliveDistance`
 
 ```dart
-LazyIndexedStack(
+EfficientIndexedStack(
   indexCalculationStrategy: IndexCalculationStrategy.aroundCurrentIndex,
   keepAliveDistance: 3,
   index: 4,
@@ -59,7 +59,7 @@ LazyIndexedStack(
 - `IndexCalculationStrategy.beforeCurrentIndex`
 
 ```dart
-LazyIndexedStack(
+EfficientIndexedStack(
   indexCalculationStrategy: IndexCalculationStrategy.beforeCurrentIndex,
   keepAliveDistance: 3,
   index: 4,
@@ -76,7 +76,7 @@ LazyIndexedStack(
 - `IndexCalculationStrategy.afterCurrentIndex`
 
 ```dart
-LazyIndexedStack(
+EfficientIndexedStack(
   indexCalculationStrategy: IndexCalculationStrategy.afterCurrentIndex,
   keepAliveDistance: 3,
   index: 4,
@@ -90,4 +90,4 @@ LazyIndexedStack(
 // 0, 1, 2, 3, [4], (5), (7), (8), 9
 ```
 
-Once you update the current index. Only the new indices are intialized and the others gets disposed.
+Once you update the current index. Only the new indices are initialized and the others gets disposed.
