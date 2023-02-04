@@ -1,7 +1,7 @@
 name: efficient_indexed_stack
 description: It's an IndexedStack that only builds the widgets that are in the range of the
   current index and the keepAliveDistance
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/EnesKaraosman/efficient_indexed_stack
 
 environment:
