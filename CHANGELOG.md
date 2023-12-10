@@ -1,3 +1,9 @@
+# CHANGELOG
+
+## 1.0.2
+
+* Upgrade flutter sdk version
+
 ## 1.0.1
 
 * Correct documentation typos
