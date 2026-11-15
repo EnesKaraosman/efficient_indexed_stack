@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.0.3
+
+* Remove the `package:flutter/material.dart` import that Flutter 3.50 deprecates
+
 ## 1.0.2
 
 * Upgrade flutter sdk version
