@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class MyCoolWidget extends StatefulWidget {
   const MyCoolWidget(this.index, {super.key});
@@ -26,9 +26,6 @@ class _MyCoolWidgetState extends State<MyCoolWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      '_MyCoolWidgetState.Index: ${widget.index}',
-      key: _dummyKey,
-    );
+    return Text('_MyCoolWidgetState.Index: ${widget.index}', key: _dummyKey);
   }
 }

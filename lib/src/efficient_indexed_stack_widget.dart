@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import 'package:flutter/widgets.dart';
 import 'package:efficient_indexed_stack/src/index_calculation_strategy.dart';
 

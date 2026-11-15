@@ -1,5 +1,5 @@
 import 'package:example/my_cool_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:efficient_indexed_stack/efficient_indexed_stack.dart';
 
 void main() {
@@ -46,10 +46,7 @@ class _MyAppState extends State<MyApp> {
           index: activeIndex,
           itemCount: itemCount,
           keepAliveDistance: 3,
-          itemBuilder: (_, index) => MyCoolWidget(
-            index,
-            key: GlobalKey(),
-          ),
+          itemBuilder: (_, index) => MyCoolWidget(index, key: GlobalKey()),
         ),
       ),
     );
